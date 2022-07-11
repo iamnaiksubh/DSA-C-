@@ -1,4 +1,6 @@
 // Implementing Stack using array
+// All operation are of O(1)
+
 #include<bits/stdc++.h>
 using namespace std;
 int const N = 1000;

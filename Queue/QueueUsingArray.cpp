@@ -1,3 +1,5 @@
+//Implementation of Queue using array
+// All operation are of O(1)
 #include<bits/stdc++.h>
 using namespace std;
 int front = -1, rear = -1;
@@ -13,12 +15,30 @@ void enqueue(int n){
 }
 
 void dequeue(){
+    if(front == rear){
+        cout << "Queue is Empty\n";
+        return;
+    }
     front++;
 }
 
-int front(){
-    if(front >= rear)
+int frontQue(){
+    if(front == rear){
+        cout << "Queue is Empty\n";
+        return 0;
+    }
+    
     return que[front+1];
+}
+
+bool isEmpty(){
+    if(front == rear)
+        return true;
+    return false;
+}
+
+int size(){
+    return rear - front;
 }
 
 
@@ -38,7 +58,7 @@ int main(){
         else if(s == "dequeue")
             dequeue();
         else if(s == "front")
-            cout << front() << endl;
+            cout << frontQue() << endl;
         else if(s == "isEmpty")
             cout << (isEmpty() ? "Empty\n" : "Not Empty\n");
         else if(s == "size")
